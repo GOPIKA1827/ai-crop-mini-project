@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UZHAVAN | About</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-shell">
+<nav>
+    <a href="index.html" class="brand">
+        <span class="brand-icon">🌾</span>
+        UZHAVAN
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="prediction.html">Prediction</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="History.html">History</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+</nav>
+<main class="about-page">
+    <section class="about-hero glass-card fade-up">
+        <div class="hero-copy">
+            <span class="eyebrow">About UZHAVAN</span>
+            <h1>Modern farming guided by premium AI insight.</h1>
+            <p>UZHAVAN delivers precise crop and fertilizer recommendations through soil, weather and field-level intelligence — all wrapped in a clean, futuristic experience.</p>
+            <div class="hero-actions">
+                <a class="btn primary" href="prediction.html">Try Prediction</a>
+                <a class="btn secondary" href="dashboard.html">View Dashboard</a>
+            </div>
+        </div>
+        <div class="hero-panel">
+            <div class="hero-glow"></div>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <strong>40+</strong>
+                    <span>Crop varieties supported</span>
+                </div>
+                <div class="stat-card">
+                    <strong>Instant</strong>
+                    <span>AI guidance</span>
+                </div>
+                <div class="stat-card">
+                    <strong>Zero</strong>
+                    <span>Complex jargon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-overview glass-card fade-up">
+        <div class="overview-panel">
+            <div class="section-heading">
+                <span class="eyebrow">Process</span>
+                <h2>How it works</h2>
+                <p>Step through UZHAVAN's field-ready process and discover how your inputs convert into actionable crop intelligence.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-step">
+                    <div class="step-index">01</div>
+                    <div class="step-copy">
+                        <h3>Capture soil health</h3>
+                        <p>Enter nitrogen, phosphorus, potassium and soil condition data for accurate field context.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-index">02</div>
+                    <div class="step-copy">
+                        <h3>Layer climate metrics</h3>
+                        <p>Add temperature, humidity and rainfall to align recommendations with seasonal conditions.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-index">03</div>
+                    <div class="step-copy">
+                        <h3>Score crop fit</h3>
+                        <p>UZHAVAN runs intelligent scoring to surface the best crops for your field profile.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-index">04</div>
+                    <div class="step-copy">
+                        <h3>Get instant guidance</h3>
+                        <p>Receive a tailored recommendation instantly, with clear next-step advice and fertilizer guidance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-values">
+            <article class="value-card">
+                <span class="value-icon">🚜</span>
+                <h3>Mission</h3>
+                <p>Help farmers make smarter choices with high-impact crop and input recommendations.</p>
+            </article>
+            <article class="value-card">
+                <span class="value-icon">🌱</span>
+                <h3>Vision</h3>
+                <p>Empower sustainable agriculture through data-driven and easy-to-use field intelligence.</p>
+            </article>
+            <article class="value-card">
+                <span class="value-icon">💡</span>
+                <h3>Approach</h3>
+                <p>Combine nutrient, weather and crop knowledge to deliver practical farming advice.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="about-features fade-up">
+        <article class="feature-card glass-card">
+            <span class="feature-icon">⚡</span>
+            <h3>Clear Decision Support</h3>
+            <p>A crisp interface that helps farmers act quickly and confidently.</p>
+        </article>
+        <article class="feature-card glass-card">
+            <span class="feature-icon">🧠</span>
+            <h3>Smart Logic</h3>
+            <p>Soil and climate inputs are evaluated together for more reliable recommendations.</p>
+        </article>
+        <article class="feature-card glass-card">
+            <span class="feature-icon">🗂️</span>
+            <h3>Saved History</h3>
+            <p>Keep all past predictions in one place for repeatable planning.</p>
+        </article>
+        <article class="feature-card glass-card">
+            <span class="feature-icon">🌾</span>
+            <h3>Crop Coverage</h3>
+            <p>Designed for rice, wheat, maize, cotton and a broad range of regional staples.</p>
+        </article>
+    </section>
+</main>
+<footer>
+    © 2025 UZHAVAN | Smart Agriculture Technology
+</footer>
+<script>
+    const animatedSections = document.querySelectorAll('.about-page .fade-up');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.16 });
+    animatedSections.forEach(section => observer.observe(section));
+</script>
+</body>
+</html>

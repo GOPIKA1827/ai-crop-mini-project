@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UZHAVAN | Crop Prediction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-shell">
+<nav>
+    <a href="index.html" class="brand">
+        <span class="brand-icon">🌾</span>
+        UZHAVAN
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="prediction.html" class="active">Prediction</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="History.html">History</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+</nav>
+<section class="hero">
+    <div class="hero-copy">
+        <span class="eyebrow">Predict with Confidence</span>
+        <h1>AI crop recommendations for better harvests.</h1>
+        <p>Create the ideal soil profile from N, P, K, temperature, humidity and rainfall inputs to get the best crop match.</p>
+    </div>
+</section>
+<main class="main-container">
+    <section class="card glass-card form-card">
+        <div class="section-title">
+            <h2>Input Field Data</h2>
+            <p>Provide the latest soil and weather conditions to generate a tailored prediction.</p>
+        </div>
+        <form id="cropForm" class="form-panel">
+            <div class="grid">
+                <div class="input-box">
+                    <label for="nitrogen">Nitrogen</label>
+                    <input type="number" id="nitrogen" required>
+                </div>
+                <div class="input-box">
+                    <label for="phosphorus">Phosphorus</label>
+                    <input type="number" id="phosphorus" required>
+                </div>
+                <div class="input-box">
+                    <label for="potassium">Potassium</label>
+                    <input type="number" id="potassium" required>
+                </div>
+                <div class="input-box">
+                    <label for="temperature">Temperature (°C)</label>
+                    <input type="number" id="temperature" required>
+                </div>
+                <div class="input-box">
+                    <label for="humidity">Humidity (%)</label>
+                    <input type="number" id="humidity" required>
+                </div>
+                <div class="input-box">
+                    <label for="rainfall">Rainfall (mm)</label>
+                    <input type="number" id="rainfall" required>
+                </div>
+            </div>
+            <div class="form-note">Use accurate field values for the best prediction results.</div>
+            <div class="hero-actions">
+                <button type="submit" class="btn primary">Predict Crop</button>
+                <button type="button" class="btn secondary" id="aiDemoBtn">AI Demo</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="results-grid">
+        <div class="card glass-card result-card compact" aria-labelledby="predictionHeading">
+            <div class="result-header">
+                <h3 id="predictionHeading">Prediction Result</h3>
+                <p class="muted">Compact recommendation: crop, fertilizer and farm summary.</p>
+            </div>
+            <div id="cropResult" class="result-panel compact-panel">
+                <div class="placeholder-box">
+                    <p>Fill the form and click <strong>Predict Crop</strong> to view a concise recommendation.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card glass-card ai-card" aria-labelledby="aiHeading">
+            <div class="result-header">
+                <h3 id="aiHeading">AI Recommendation</h3>
+                <p class="muted">Detailed AI reasoning and recommendations appear here.</p>
+            </div>
+            <div id="aiResult" class="result-panel ai-panel">
+                <div class="placeholder-box">
+                    <p>Click <strong>AI Demo</strong> to see the full reasoning and recommendations from the AI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    © 2025 UZHAVAN | Agri Intelligence
+</footer>
+<script src="prediction.js"></script>
+</body>
+</html>

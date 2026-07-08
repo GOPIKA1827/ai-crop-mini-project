@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UZHAVAN | History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-shell">
+<nav>
+    <a href="index.html" class="brand">
+        <span class="brand-icon">🌾</span>
+        UZHAVAN
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="prediction.html">Prediction</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="History.html" class="active">History</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+</nav>
+<main class="main-container">
+    <section class="glass-card history-card">
+        <div class="history-header">
+            <h2>Prediction History</h2>
+            <p>Track saved entries, crop decisions and fertilizer results in one clean table.</p>
+        </div>
+        <div class="table-responsive">
+            <table id="historyTable" class="history-table" aria-label="Prediction history table">
+                <caption>Saved crop predictions and fertilizer guidance</caption>
+                <thead>
+                    <tr>
+                        <th>N</th>
+                        <th>P</th>
+                        <th>K</th>
+                        <th>Temp</th>
+                        <th>Humidity</th>
+                        <th>Rainfall</th>
+                        <th>Crop</th>
+                        <th>Fertilizer</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+</main>
+<footer>
+    © 2025 UZHAVAN | Recorded Predictions
+</footer>
+<script src="history.js"></script>
+</body>
+</html>

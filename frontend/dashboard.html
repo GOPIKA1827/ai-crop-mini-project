@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UZHAVAN | Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-AOVz5YCjz1u1RLAu+DKd20s8H5uUcHezVxAQwHXVhG0KpUwt5X2q11Qj+wJ3YQO3dXivgR3FTD7bYjWyhT7XEw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="page-shell">
+<nav>
+  <a href="index.html" class="brand">
+    <span class="brand-icon"><i class="fa-solid fa-seedling"></i></span>
+    UZHAVAN
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="prediction.html">Prediction</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="History.html">History</a></li>
+    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+  </ul>
+</nav>
+<main class="dashboard-page">
+  <header class="dashboard-header glass-card">
+    <div>
+      <h1>Farm Insights Dashboard</h1>
+      <p>Monitor weather, soil health, prediction outcomes and market signals from one modern command center.</p>
+    </div>
+    <span class="status-pill">Updated just now</span>
+  </header>
+  <section class="dashboard-grid">
+    <article class="dashboard-card weather-card">
+      <div class="card-heading">
+        <div class="title-group">
+          <span class="card-icon"><i class="fa-solid fa-cloud-sun"></i></span>
+          <div>
+            <h2>Weather</h2>
+            <span>Current field conditions</span>
+          </div>
+        </div>
+      </div>
+      <div class="weather-grid">
+        <div class="weather-metric">
+          <span>Temperature</span>
+          <strong id="weatherTemp">--°C</strong>
+        </div>
+        <div class="weather-metric">
+          <span>Humidity</span>
+          <strong id="weatherHumidity">--%</strong>
+        </div>
+        <div class="weather-metric">
+          <span>Rainfall</span>
+          <strong id="weatherRain">-- mm</strong>
+        </div>
+      </div>
+      <div class="weather-summary">
+        <span id="weatherCondition" class="weather-condition-text">Loading weather...</span>
+      </div>
+      <div class="weather-details">
+        <div class="detail-pill"><i class="fa-solid fa-location-dot"></i> <span id="weatherLocation">Loading location...</span></div>
+        <div class="detail-pill"><i class="fa-solid fa-wind"></i> <span id="weatherWind">-- km/h</span></div>
+        <div class="detail-pill"><i class="fa-solid fa-droplet"></i> <span id="weatherRainChance">--%</span> chance</div>
+      </div>
+      <div class="status-pill weather-pill" id="weatherStatus">Stable</div>
+      <div class="progress-block">
+        <span>Humidity stability</span>
+        <div class="progress-track">
+          <span id="humidityStabilityFill" class="progress-fill" style="width: 0%"></span>
+        </div>
+      </div>
+    </article>
+    <article class="dashboard-card prediction-card">
+      <div class="card-heading">
+        <div class="title-group">
+          <span class="card-icon"><i class="fa-solid fa-seedling"></i></span>
+          <div>
+            <h2>Crop Prediction</h2>
+            <span>Best recommendation</span>
+          </div>
+        </div>
+      </div>
+      <div class="prediction-summary">
+        <p class="large-text" id="predictedCrop">Loading...</p>
+        <p class="detail-line">Prediction based on the latest soil and climate inputs.</p>
+        <div class="metric-list">
+          <div><strong>Confidence</strong><span id="cropConfidence">--%</span></div>
+          <div><strong>Fertilizer</strong><span id="recommendation">--</span></div>
+        </div>
+      </div>
+    </article>
+    <article class="dashboard-card soil-card">
+      <div class="card-heading">
+        <div class="title-group">
+          <span class="card-icon"><i class="fa-solid fa-flask-vial"></i></span>
+          <div>
+            <h2>Soil Profile</h2>
+            <span>NPK balance</span>
+          </div>
+        </div>
+      </div>
+      <div class="soil-chart">
+        <div class="soil-bar">
+          <div class="soil-legend-wrap">
+            <span class="soil-legend">Nitrogen</span>
+            <strong id="soilNLabel">0%</strong>
+          </div>
+          <div class="bar"><span id="soilN" style="width: 0%"></span></div>
+        </div>
+        <div class="soil-bar">
+          <div class="soil-legend-wrap">
+            <span class="soil-legend">Phosphorus</span>
+            <strong id="soilPLabel">0%</strong>
+          </div>
+          <div class="bar"><span id="soilP" style="width: 0%"></span></div>
+        </div>
+        <div class="soil-bar">
+          <div class="soil-legend-wrap">
+            <span class="soil-legend">Potassium</span>
+            <strong id="soilKLabel">0%</strong>
+          </div>
+          <div class="bar"><span id="soilK" style="width: 0%"></span></div>
+        </div>
+      </div>
+    </article>
+    <article class="dashboard-card yield-card">
+      <div class="card-heading">
+        <div class="title-group">
+          <span class="card-icon"><i class="fa-solid fa-chart-line"></i></span>
+          <div>
+            <h2>Yield Analytics</h2>
+            <span>Forecast insights</span>
+          </div>
+        </div>
+      </div>
+      <div class="yield-metrics">
+        <div class="yield-block">
+          <strong id="yieldTotal">-- kg</strong>
+          <span>Total yield</span>
+        </div>
+        <div class="yield-block">
+          <strong id="yieldForecast">--%</strong>
+          <span>Forecast accuracy</span>
+        </div>
+      </div>
+      <div class="progress-block">
+        <span>Forecast confidence</span>
+        <div class="progress-track accent">
+          <span id="forecastConfidenceFill" class="progress-fill" style="width: 0%"></span>
+        </div>
+      </div>
+      <p class="detail-line">Estimates based on current conditions and historic patterns.</p>
+    </article>
+    <article class="dashboard-card market-card">
+      <div class="card-heading">
+        <div class="title-group">
+          <span class="card-icon"><i class="fa-solid fa-chart-pie"></i></span>
+          <div>
+            <h2>Market Trends</h2>
+            <span>Price signals</span>
+          </div>
+        </div>
+      </div>
+      <table class="market-table">
+        <thead>
+          <tr><th>Crop</th><th>Price/ton</th></tr>
+        </thead>
+        <tbody id="marketPricesBody">
+          <tr><td>Rice</td><td>₹24,000</td></tr>
+          <tr><td>Wheat</td><td>₹20,500</td></tr>
+          <tr><td>Maize</td><td>₹16,700</td></tr>
+        </tbody>
+      </table>
+    </article>
+    <article class="dashboard-card disease-card">
+      <div class="card-heading">
+        <div class="title-group">
+          <span class="card-icon"><i class="fa-solid fa-shield-virus"></i></span>
+          <div>
+            <h2>Field Health</h2>
+            <span>Disease risk</span>
+          </div>
+        </div>
+      </div>
+      <div class="disease-status">
+        <div>
+          <strong id="diseaseRisk">Moderate</strong>
+          <p class="detail-line" id="diseaseMessage">Humidity and rainfall levels may raise crop disease risk.</p>
+        </div>
+        <span class="disease-pill safe" id="diseaseBadge">Monitor</span>
+      </div>
+      <div class="progress-block risk-block">
+        <span>Risk level</span>
+        <div class="progress-track danger">
+          <span id="riskLevelFill" class="progress-fill" style="width: 40%"></span>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
+<footer>
+  © 2025 UZHAVAN | Smart Agriculture Insights
+</footer>
+<script src="dashboard.js"></script>
+</body>
+</html>
